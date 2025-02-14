@@ -1,46 +1,82 @@
 class Tarefa:
+    tarefas = []  # Lista para armazenar todas as tarefas
+
     def __init__(self, id, nome, descricao, status='pendente'):
-        self.__id = id
+        self.id = id
         self.nome = nome
-        self.__descricao = descricao
-        self.__status = status        
+        self.descricao = descricao
+        self.status = status        
 
-    def get_tarefa(self):
-        return self.__id, self.nome, self.__descricao, self.__status
+    def __str__(self):
+        return f'ID: {self.id} | Nome: {self.nome} | Descrição: {self.descricao} | Status: {self.status}'
 
-    def add_tarefa(self, tarefa):
-        self.__tarefas.append(tarefa)
+    @classmethod
+    def get_tarefas(cls):
+        if not cls.tarefas:
+            print("Nenhuma tarefa cadastrada.")
+        else:
+            for tarefa in cls.tarefas:
+                print(tarefa)
 
-    def concluir_tarefa(self, tarefa):
-        self.__tarefas.status = 'concluida'
+    @classmethod
+    def add_tarefa(cls, tarefa):
+        cls.tarefas.append(tarefa)
+        print("✅ Tarefa adicionada com sucesso!")
 
-    def remover_tarefa(self, tarefa):
-        self.__tarefas.remove(tarefa)
+    @classmethod
+    def concluir_tarefa(cls, id):
+        for tarefa in cls.tarefas:
+            if tarefa.id == id:
+                tarefa.status = 'concluída'
+                print("✅ Tarefa concluída!")
+                return
+        print("⚠️ Tarefa não encontrada.")
+
+    @classmethod
+    def remover_tarefa(cls, id):
+        for tarefa in cls.tarefas:
+            if tarefa.id == id:
+                cls.tarefas.remove(tarefa)
+                print("🗑️ Tarefa removida com sucesso!")
+                return
+        print("⚠️ Tarefa não encontrada.")
+
+# Loop principal do menu
 escolha = ''
+
 while escolha != 's':
-    print('O que deseja fazer?')
-    escolha =  input('1 - Adicionar tarefa\n2 - Listar tarefas\n3 - Concluir tarefa\n4 - Remover tarefa\ns - Sair\n')
+    print('\nO que deseja fazer?')
+    escolha = input('1 - Adicionar tarefa\n2 - Listar tarefas\n3 - Concluir tarefa\n4 - Remover tarefa\ns - Sair\n')
 
     if escolha == '1':
-        print('-'*25)
+        print('-' * 25)
         print('Adicionar tarefa')
-        tarefa = []
-        id = input('Digite o id da tarefa: ')
+        id = input('Digite o ID da tarefa: ')
         nome = input('Digite o nome da tarefa: ')
-        descricao = input('Digite a descricao da tarefa: ')
+        descricao = input('Digite a descrição da tarefa: ')
 
-        tarefa = Tarefa(id, nome, descricao)
-    if escolha == '2':
-        print('-'*25)
+        nova_tarefa = Tarefa(id, nome, descricao)
+        Tarefa.add_tarefa(nova_tarefa)
+
+    elif escolha == '2':
+        print('-' * 25)
         print('Listar tarefas')
-        print(tarefa.get_tarefa())
-    if escolha == '3':
-        print('-'*25)
+        Tarefa.get_tarefas()
+
+    elif escolha == '3':
+        print('-' * 25)
         print('Concluir tarefa')
-        tarefa.concluir_tarefa()
-    if escolha == '4':
-        print('-'*25)
+        id = input('Digite o ID da tarefa a concluir: ')
+        Tarefa.concluir_tarefa(id)
+
+    elif escolha == '4':
+        print('-' * 25)
         print('Remover tarefa')
-        tarefa.remover_tarefa()
+        id = input('Digite o ID da tarefa a remover: ')
+        Tarefa.remover_tarefa(id)
 
+    elif escolha == 's':
+        print("👋 Saindo do sistema...")
 
+    else:
+        print("❌ Opção inválida! Escolha novamente.")
