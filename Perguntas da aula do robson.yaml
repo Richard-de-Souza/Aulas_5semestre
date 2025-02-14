@@ -1,0 +1,41 @@
+Perguntas da aula do robson
+
+- qual o primeiro passo para um otimo gerenciamento de redes?
+    R: conhecer a topologia de redes
+
+- alem da topologia o que mais é necessario ser feito para gerenciar uma rede?
+    R: Uma documentação da rede de computadores
+    contando com inventario, diagramas e a própria 
+    documentação da rede.
+
+- qual a importancia do backup automatico?
+    R: ele pode gerar alertas de mudanças na rede
+    auxilia aos processos a serem recuperados (voltarem a funcionar)
+
+- que tipos de informações  são armezenadas nos logs
+    R: acessos de usuarios
+    acesso a programas
+    eventos importantes
+    erros e alertas
+
+- quais tipos de problemas podem ocorrer em uma rede causando alertas?
+    R: falhas na rede
+    falhas nos dispositivos
+    falhas de segurança
+    capacidade de armazenamento
+
+- como corrigir um problema
+    R: identificar o problema
+    entender o problema
+    gerar analises a respeito
+    corrigir o problema
+
+- quais as funcoes de um profissional administrador de rede?
+    R: monitorar a rede
+    definir a politica de seguranca
+    configuração de permissões de acesso
+    fazer a instalacao de novos servidores
+
+- pra que um protocolo de gerenciamento de redes?
+    R: Por conta do aumento da complexidade das redes
+    e da demanda de computadores
