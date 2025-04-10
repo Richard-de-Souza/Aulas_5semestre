@@ -16,9 +16,11 @@
         }
 
         .menu {
-            background-color: #111;
+            background-color: rgba(112, 3, 3, 0.8);
             padding: 20px 0;
+            margin-bottom: 50px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            width: 100%;
         }
 
         .item-menu {
@@ -29,6 +31,7 @@
             border-radius: 8px;
             text-align: center;
             transition: all 0.3s ease-in-out;
+            opacity: 0;
         }
 
         .item-menu a {
@@ -65,9 +68,7 @@
 
         .container {
             width: 100%;
-            margin: 40px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             padding: 20px;
             background-color:rgb(141, 137, 137);
         }
@@ -85,6 +86,7 @@
 
         #navbarMenu.show .nav-item {
             animation: slideIn 0.5s ease forwards;
+
         }
 
         /* Aplica atraso sequencial em cada item para efeito em cascata */
