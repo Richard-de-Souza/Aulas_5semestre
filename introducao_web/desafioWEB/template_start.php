@@ -70,7 +70,7 @@
             width: 100%;
             border-radius: 10px;
             padding: 20px;
-            background-color:rgb(141, 137, 137);
+            background-color:rgb(70, 70, 70);
         }
 
         @keyframes slideIn {
@@ -123,7 +123,7 @@
                     <a class="nav-link" href="equipe.php">Equipe</a>
                 </li>
                 <li class="nav-item item-menu">
-                    <a class="nav-link" href="dicas.php">Dicas de fuga</a>
+                    <a class="nav-link" href="dicas_sobrevivencia.php">Dicas de fuga</a>
                 </li>
                 <li class="nav-item item-menu">
                     <a class="nav-link" href="contato.php">Contato</a>
