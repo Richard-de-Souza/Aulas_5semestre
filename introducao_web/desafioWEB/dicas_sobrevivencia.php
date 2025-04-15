@@ -105,10 +105,68 @@
             align-items: center;
             justify-content: center;
         }
+        .modal-backdrop.show {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+
 
     </style>
 </head>
 <body>
+
+    <!-- modais -->
+    <div class="modal fade" id="kitModal" tabindex="-1" aria-labelledby="kitModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #1e1e1e; color: #f1f1f1; border: 1px solid #333; box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); border-radius: 10px;">
+            
+            <div class="modal-header" style="border-bottom: 1px solid #444;">
+                <h5 class="modal-title" id="kitModalLabel" style="color: #ff4c4c;">Kit de Sobrevivência Básico</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body text-center">
+                <img src="img/kit.png" alt="Kit de Sobrevivência Básico" class="img-fluid" style="max-width: 100%; height: auto; border-radius: 8px;">
+                <p class="mt-3">Kit de Sobrevivência Básico</p>
+                <p>Um kit de sobrevivência básico contendo tudo o que um sobrevivente precisa para sobreviver na cidade abandonada.</p>
+                <!-- faça um texto enormego aqui -->
+                <p class="mt-3">Preco: R$ 1.999,99</p>
+                <a href="https://www.paypal.com/paypalme/ricardesouza" class="btn btn-danger" style="border-radius: 5px;">Comprar Agora</a>
+            </div>
+            
+            <div class="modal-footer" style="border-top: 1px solid #444;">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="border-radius: 5px;">Fechar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal cidade -->
+    <div class="modal fade" id="cidadeModal" tabindex="-1" aria-labelledby="cidadeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #1e1e1e; color: #f1f1f1; border: 1px solid #333; box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); border-radius: 10px;">
+            
+            <div class="modal-header" style="border-bottom: 1px solid #444;">
+                <h5 class="modal-title" id="cidadeModalLabel" style="color: #ff4c4c;">Cidade Abandonada</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body text-center">
+                <img src="img/cidadeAbandonada.png" alt="Cidade Abandonada" class="img-fluid" style="max-width: 100%; height: auto; border-radius: 8px;">
+                <p class="mt-3">Cidade Abandonada</p>
+                <p>A cidade pode ser uma armadilha mortal ou uma fortaleza. Descubra quais prédios têm melhor estrutura para resistir a ataques e como fortificá-los.</p>
+                <!-- faça um texto enormego aqui -->
+                <p class="mt-3">Preco: R$ 1.999,99</p>
+                <a href="https://www.paypal.com/paypalme/ricardesouza" class="btn btn-danger" style="border-radius: 5px;">Comprar Agora</a>
+            </div>
+            
+            <div class="modal-footer" style="border-top: 1px solid #444;">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="border-radius: 5px;">Fechar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modais -->
 
     <div class="header">
         <h1>📖 Relatos e Dicas de Sobrevivência</h1>
@@ -131,7 +189,6 @@
                             </p>
                             <p class="post-content">
                                 Um bom kit de sobrevivência básico pode salvar sua vida — literalmente. Em um mundo onde o inesperado se tornou rotina, cada item carrega um peso vital. 
-                                A água potável, por exemplo, não é apenas essencial para a hidratação: ela é crucial para a sanidade, para cozinhar, para esterilizar, para sobreviver.
                             </p>
                         </div>
 
@@ -155,7 +212,9 @@
                             <p class="post-content">
                                 A cidade pode ser uma armadilha mortal ou uma fortaleza. Descubra quais prédios têm melhor estrutura para resistir a ataques e como fortificá-los.
                             </p>
-                            <a href="#" class="read-more">Ler mais →</a>
+                            <p class="post-content">
+                                Bem, se vocês não tem um plano para se esconder, temos uma dica: se vocês estiverem em uma cidade abandonada, a melhor coisa para se esconder eh se esconder em uma torre.
+                            </p>
                         </div>
 
                         <!-- Verso do card -->
