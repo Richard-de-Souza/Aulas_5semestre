@@ -73,6 +73,18 @@
             background-color:rgb(70, 70, 70);
         }
 
+        .item-menu.active {
+            background-color: #b30000;
+            box-shadow: 0 0 15px #ff0000aa;
+            transform: scale(1.08);
+        }
+
+        .item-menu.active a {
+            font-weight: bold;
+            color: #fff;
+        }
+
+
         @keyframes slideIn {
             from {
                 transform: translateX(-30px);
@@ -97,12 +109,35 @@
         #navbarMenu.show .nav-item:nth-child(5) { animation-delay: 0.4s; }
         #navbarMenu.show .nav-item:nth-child(6) { animation-delay: 0.5s; }
 
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-in;
+        }
 
+        .loading-gif {
+            width: 100px;
+            height: 100px;
+        }
 
     </style>
 </head>
 
 <body>
+    <!-- Tela de loading -->
+    <div id="loading-screen">
+        <img src="img/Zumbi.gif" alt="Carregando..." class="loading-gif">
+    </div>
+
+
     <div class="menu">
     <nav class="navbar navbar-dark menu-site d-flex align-items-center justify-content-between">
     <a class="navbar-brand text-light" href="#">🧟 Guia Zumbi</a>
@@ -141,5 +176,34 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+    // Detecta página atual para marcar item do menu
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
+
+    document.querySelectorAll(".item-menu a").forEach(link => {
+        const href = link.getAttribute("href");
+        const li = link.closest(".item-menu");
+
+        if ((page === "" && href === "index.php") || href === page) {
+            li.classList.add("active");
+        }
+    });
+
+    const startTime = Date.now();
+
+    window.addEventListener('load', function () {
+        const loader = document.getElementById('loading-screen');
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(0, 1000 - elapsed); // Garante 1s mínimo
+
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); // tempo do fade-out
+        }, delay);
+    });
+</script>
 
 </html>
