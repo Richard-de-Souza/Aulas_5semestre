@@ -10,7 +10,7 @@
 
     <style>
         body {
-            background-image: url('img/cidadeAbandonadaFundo.jpg');
+            background-image: url('img/equipe.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
